@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP tables Firewall</title>
+<!--    <link rel="stylesheet" href="../static/css/iptables.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/iptables.css') }}">
+    <style>
+        .table {
+            display: flex;
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+            margin: 5rem auto;
+        }
+        .table table {
+            color: white;
+            font-size: 1.5rem;
+            border: 2px solid white;
+        }
+        .table table tr {
+            border: 1px solid white;
+        }
+        .table table tr td, .table table tr th {
+            padding: 0.5rem 1.5rem;
+        }
+        #form-number {
+            display: flex;
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+            margin: 5rem auto;
+        }
+        form input{
+            width: 30%;
+            padding: 0.5rem 1rem;
+            height: 3.5rem;
+            font-size: 1.5rem;
+            border: 1.5px solid #8dffb3;
+        }
+        .table table tr th {
+            border-bottom: 1px solid white;
+        }
+        #submit {
+            width: 10rem;
+            background-color: black;
+            color: #8dffb3;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Delete the firewall Rules:-</h1>
+
+    <div class="table">
+        <!-- for sno -->
+    <table>
+
+        <thead>
+            <tr>
+                <th>SNO</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for sno in snos %}
+                <tr>
+                    <td>{{ sno }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+
+    <!-- for URL -->
+    <table>
+
+        <thead>
+            <tr>
+                <th>URL</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for url in urls %}
+
+                <tr>
+                    <td>{{ url }}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+    </div>
+
+    <form action="/phishing-new" method="get" id="form-number">
+
+        <input type="text" placeholder="Enter the URL SNO to delete" name="number">
+        <input type="submit" value="submit" id="submit">
+
+    </form>
+
+</body>
+</html>

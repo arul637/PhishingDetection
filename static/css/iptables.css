@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Iceland&family=Orbitron:wght@400;700&family=Roboto&family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+body h1 {
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    margin: 8rem 0;
+}

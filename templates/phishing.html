@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+    <!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+</head>
+<body>
+
+    <div id="flex">
+        <form action="/phishing" method="get">
+
+            <div class="topic">
+                <h1>Enter the URL</h1>
+                <h4>check the url is safe to use!</h4>
+            </div>
+
+            <div class="input-submit">
+                <input type="text" name="url" id="url" placeholder="https://google.com" required>
+                <input type="submit" value="submit" id="submit">
+            </div>
+
+        </form>
+        <div class="answers">
+            <div class="url"></div>
+            <div class="phish">
+                <span class="circle">
+                    <h2 id="phish-percent">0%</h2>
+                </span>
+                <h3>Phishing Percentage</h3>
+            </div>
+            <div class="non-phish">
+                <span class="circle">
+                    <h2 id="non-phish-percent">0%</h2>
+                </span>
+                <h3>Non-Phishing Percentage</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="delete-rules">
+        <a href="/deleteurl">Delete Firewall Rules</a>
+    </div>
+
+    <script>
+        let inputSection = document.querySelector('.url');
+        let phishPercent = document.querySelector('#phish-percent');
+        let nonPhishPercent = document.querySelector('#non-phish-percent');
+        inputSection.textContent = 'https://google.com';
+        let phish = '{{phish}}';
+        let non_phish = '{{non_phish}}';
+        let url = '{{url}}';
+
+        console.log(phish + non_phish + url)
+
+        if (non_phish) {
+            phishPercent.textContent = phish + '%';
+            nonPhishPercent.textContent = non_phish + '%';
+            inputSection.textContent = url;
+        }
+
+    </script>
+
+</body>
+</html>
