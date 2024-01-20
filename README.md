@@ -64,3 +64,10 @@ To detect Phishing URL's
 
     conda install anaconda::scikit-learn
 
+<h1>Results:-</h1>
+
+![Screenshot from 2024-01-20 09-05-11](https://github.com/arul637/PhishingDetection/assets/95573091/2a7f5666-e5a4-4fbe-8396-10fca83e48c7)
+![Screenshot from 2024-01-20 08-44-23](https://github.com/arul637/PhishingDetection/assets/95573091/ca3b378d-59c0-46aa-9e00-b86ac486b5dc)
+![Screenshot from 2024-01-20 08-45-20](https://github.com/arul637/PhishingDetection/assets/95573091/49105f0e-ce76-4618-867a-7f2fa51bc7db)
+
+
